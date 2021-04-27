@@ -47,6 +47,7 @@ class Table extends React.Component {
     return rndCarteTemp
   }
 
+  // def des clique des button 
   onClickStop = () => {
     const cardSelectedDealer = this.rndCarte()
     const cardSelectedDealer2 = this.rndCarte()
@@ -63,6 +64,7 @@ class Table extends React.Component {
       nameOfWinner: ""
     }
 
+    // condition pour winn
     while (dealerValue < 17) {
       const cardSelectedDealer = this.rndCarte()
       const valueCarteDealer = this.transformCardIntoInt(cardSelectedDealer.split("")[0])
@@ -109,6 +111,7 @@ class Table extends React.Component {
     })
   }
 
+  // ajout carte
   onClickGive = () => {
     const cardSelected = this.rndCarte()
     const valueCarte = this.transformCardIntoInt(cardSelected.split("")[0])
@@ -119,7 +122,7 @@ class Table extends React.Component {
       playerCardList: [...this.state.playerCardList, cardSelected]
     })
   }
-
+// les cartes K,Q,J,A,0 ont une valeur a 10
   transformCardIntoInt(cardValue) {
     if (cardValue === "K" || cardValue === "Q" || cardValue === "J" || cardValue === "A" || cardValue === "0") {
       cardValue = "10"
@@ -128,6 +131,7 @@ class Table extends React.Component {
     return parseInt(cardValue)
   }
 
+  // methode pour le StartGame ainsi que pour les valeurs
   startGame = () => {
     const cardSelected = this.rndCarte()
     const cardSelected2 = this.rndCarte()
@@ -148,12 +152,15 @@ class Table extends React.Component {
 
   render() {
     if (this.state.startGame == false) {
-      return (
-        <Game startGame={this.startGame} />
+      return  (
+        <Game startGame={this.startGame} /> 
       )
+      // retourne le StartGame
     } else {
       return (<div>
 
+
+{/* div pour le style, pour la declaration du winner, style button */}
         <div className="playGame">
           <div style={{ height: '100vh', position: 'relative' }}>
             <h1 style={{ color: '#feb236', textAlign: 'center' }}>Black Jack</h1>
