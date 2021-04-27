@@ -15,7 +15,7 @@ const cardArray = [
 // const cardCount = 52
 
 // let rndNum = 0
-// let temp = ""
+// let temp = "" 
 let arrayLength = 0
 let rndCarteTemp = "";
 let rndNumTemp = 0;
